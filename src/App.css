@@ -247,3 +247,42 @@ body {
     font-size: 0.875rem;
   }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .header-container {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-title,
+[dir="rtl"] .hero-subtitle,
+[dir="rtl"] .hero-description,
+[dir="rtl"] .section-title {
+  text-align: center;
+}
+
+[dir="rtl"] .repo-link:hover {
+  transform: translateX(-4px);
+}
+
+/* Persian Font Support */
+[dir="rtl"] body {
+  font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3 {
+  font-family: 'Vazir', sans-serif;
+}
+
+[dir="rtl"] .protocol-link {
+  font-family: 'Vazir', sans-serif;
+}
