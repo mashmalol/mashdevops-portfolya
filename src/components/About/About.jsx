@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
 import './About.css';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const { t } = useLanguage();
 
   const tabs = [
-    { id: 'overview', label: t('about.tabs.overview'), icon: '📋' },
-    { id: 'protocol', label: t('about.tabs.protocol'), icon: '⚡' },
-    { id: 'skills', label: t('about.tabs.skills'), icon: '🛠️' },
-    { id: 'vision', label: t('about.tabs.vision'), icon: '🚀' }
+    { id: 'overview', label: 'Overview', icon: '📋' },
+    { id: 'protocol', label: 'Mash Protocol', icon: '⚡' },
+    { id: 'skills', label: 'Tech Stack', icon: '🛠️' },
+    { id: 'vision', label: 'Vision', icon: '🚀' }
   ];
 
   const skills = {
@@ -44,7 +42,7 @@ const About = () => {
     <section className="about-section" id="about">
       <div className="container">
         <h2 className="section-title">
-          <span className="gradient-text">{t('about.title')}</span>
+          <span className="gradient-text">About Me</span>
         </h2>
 
         {/* Tabs */}
@@ -68,32 +66,34 @@ const About = () => {
             <div className="tab-panel fade-in">
               <div className="overview-grid">
                 <div className="overview-text">
-                  <h3>{t('about.overview.heading')}</h3>
+                  <h3>Full Stack Developer & Blockchain Innovator</h3>
                   <p className="intro-text">
-                    {t('about.overview.intro')} <strong>{t('about.protocol.heading').split(':')[0]}</strong>
-                    {t('about.overview.protocolDesc')}
+                    Building the future of decentralized technology through innovative solutions 
+                    in blockchain, AI, and full-stack development. Creator of <strong>Mash Protocol</strong>, 
+                    a revolutionary blockchain infrastructure designed to bridge traditional finance 
+                    with decentralized ecosystems.
                   </p>
                   <div className="highlight-stats">
                     <div className="stat-item">
                       <div className="stat-number">23+</div>
-                      <div className="stat-label">{t('about.overview.stats.projects')}</div>
+                      <div className="stat-label">Projects</div>
                     </div>
                     <div className="stat-item">
                       <div className="stat-number">8+</div>
-                      <div className="stat-label">{t('about.overview.stats.blockchain')}</div>
+                      <div className="stat-label">Blockchain dApps</div>
                     </div>
                     <div className="stat-item">
                       <div className="stat-number">7+</div>
-                      <div className="stat-label">{t('about.overview.stats.ai')}</div>
+                      <div className="stat-label">AI Systems</div>
                     </div>
                   </div>
                   <div className="expertise-areas">
-                    <h4>{t('about.overview.expertise.title')}</h4>
+                    <h4>Core Expertise:</h4>
                     <ul>
-                      <li>🔗 <strong>{t('about.overview.expertise.blockchain')}</strong> {t('about.overview.expertise.blockchainDesc')}</li>
-                      <li>🤖 <strong>{t('about.overview.expertise.ai')}</strong> {t('about.overview.expertise.aiDesc')}</li>
-                      <li>💼 <strong>{t('about.overview.expertise.fullstack')}</strong> {t('about.overview.expertise.fullstackDesc')}</li>
-                      <li>🎮 <strong>{t('about.overview.expertise.gaming')}</strong> {t('about.overview.expertise.gamingDesc')}</li>
+                      <li>🔗 <strong>Blockchain Development:</strong> Smart contracts, DAOs, NFTs, DeFi protocols</li>
+                      <li>🤖 <strong>AI & Machine Learning:</strong> Trading bots, RAG systems, autonomous agents</li>
+                      <li>💼 <strong>Full-Stack Engineering:</strong> React, Next.js, Node.js, Python</li>
+                      <li>🎮 <strong>Web3 Gaming:</strong> NFT integration, on-chain gameplay</li>
                     </ul>
                   </div>
                 </div>
@@ -138,7 +138,7 @@ contract Innovation {
             <div className="tab-panel fade-in">
               <div className="protocol-content">
                 <div className="protocol-header">
-                  <h3>{t('about.protocol.heading')}</h3>
+                  <h3>Mash Protocol: Bridging Traditional Finance & DeFi</h3>
                   <a 
                     href="https://mashprotocol4.wordpress.com/" 
                     target="_blank" 
@@ -148,58 +148,74 @@ contract Innovation {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    {t('about.protocol.whitepaper')}
+                    Read Full Whitepaper
                   </a>
                 </div>
 
                 <div className="protocol-grid">
                   <div className="protocol-card">
                     <div className="card-icon">💎</div>
-                    <h4>{t('about.protocol.rwa.title')}</h4>
-                    <p>{t('about.protocol.rwa.description')}</p>
+                    <h4>Real World Assets (RWA)</h4>
+                    <p>
+                      Tokenization of real estate and traditional assets on blockchain, 
+                      creating liquidity and accessibility for previously illiquid markets.
+                    </p>
                     <ul className="feature-list">
-                      {t('about.protocol.rwa.features').map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
+                      <li>Fractional ownership of real estate</li>
+                      <li>Automated compliance & regulations</li>
+                      <li>Cross-chain interoperability</li>
                     </ul>
                   </div>
 
                   <div className="protocol-card">
                     <div className="card-icon">⚡</div>
-                    <h4>{t('about.protocol.defi.title')}</h4>
-                    <p>{t('about.protocol.defi.description')}</p>
+                    <h4>DeFi Infrastructure</h4>
+                    <p>
+                      Comprehensive decentralized finance protocols including lending, 
+                      staking, and yield optimization strategies.
+                    </p>
                     <ul className="feature-list">
-                      {t('about.protocol.defi.features').map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
+                      <li>Credit scoring via SBTs</li>
+                      <li>Decentralized lending pools</li>
+                      <li>Governance & DAO mechanisms</li>
                     </ul>
                   </div>
 
                   <div className="protocol-card">
                     <div className="card-icon">🔐</div>
-                    <h4>{t('about.protocol.sbt.title')}</h4>
-                    <p>{t('about.protocol.sbt.description')}</p>
+                    <h4>Soulbound Tokens (SBT)</h4>
+                    <p>
+                      Non-transferable identity and reputation tokens for decentralized 
+                      credit scoring and verification systems.
+                    </p>
                     <ul className="feature-list">
-                      {t('about.protocol.sbt.features').map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
+                      <li>On-chain identity verification</li>
+                      <li>Reputation & credit history</li>
+                      <li>Privacy-preserving credentials</li>
                     </ul>
                   </div>
 
                   <div className="protocol-card">
                     <div className="card-icon">🌐</div>
-                    <h4>{t('about.protocol.crosschain.title')}</h4>
-                    <p>{t('about.protocol.crosschain.description')}</p>
+                    <h4>Cross-Chain Compatibility</h4>
+                    <p>
+                      Multi-chain architecture supporting Ethereum, Polygon, and other 
+                      EVM-compatible networks for maximum reach.
+                    </p>
                     <ul className="feature-list">
-                      {t('about.protocol.crosschain.features').map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
+                      <li>Bridge protocols</li>
+                      <li>Layer 2 scaling solutions</li>
+                      <li>Interoperable standards</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="protocol-vision">
-                  <blockquote>{t('about.protocol.vision')}</blockquote>
+                  <blockquote>
+                    "Mash Protocol aims to democratize access to financial services by 
+                    combining the transparency and efficiency of blockchain with the 
+                    stability and trust of traditional finance."
+                  </blockquote>
                 </div>
 
                 <div className="protocol-projects">
@@ -231,7 +247,7 @@ contract Innovation {
                   {Object.entries(skills).map(([category, items]) => (
                     <div key={category} className="skill-category">
                       <h4 className="category-title">
-                        {t(`about.skills.${category}`)}
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
                       </h4>
                       <div className="skill-items">
                         {items.map((skill, index) => (
@@ -254,7 +270,7 @@ contract Innovation {
                 </div>
 
                 <div className="tech-badges">
-                  <h4>{t('about.skills.technologies')}</h4>
+                  <h4>Technologies & Tools</h4>
                   <div className="badge-grid">
                     {['Solidity', 'React', 'Python', 'TypeScript', 'Next.js', 'Web3.js', 
                       'Hardhat', 'Ethers.js', 'LangChain', 'FastAPI', 'Docker', 'IPFS',
@@ -271,52 +287,83 @@ contract Innovation {
           {activeTab === 'vision' && (
             <div className="tab-panel fade-in">
               <div className="vision-content">
-                <h3>{t('about.vision.heading')}</h3>
+                <h3>Building Tomorrow's Infrastructure Today</h3>
                 
                 <div className="vision-blocks">
-                  {['decentralization', 'innovation', 'accessibility', 'sustainability'].map((block, index) => (
-                    <div key={block} className="vision-block">
-                      <div className="block-number">{String(index + 1).padStart(2, '0')}</div>
-                      <h4>{t(`about.vision.blocks.${block}.title`)}</h4>
-                      <p>{t(`about.vision.blocks.${block}.description`)}</p>
-                    </div>
-                  ))}
+                  <div className="vision-block">
+                    <div className="block-number">01</div>
+                    <h4>Decentralization</h4>
+                    <p>
+                      Creating truly decentralized systems that empower individuals and 
+                      communities, removing intermediaries and reducing friction in global finance.
+                    </p>
+                  </div>
+
+                  <div className="vision-block">
+                    <div className="block-number">02</div>
+                    <h4>Innovation</h4>
+                    <p>
+                      Pushing the boundaries of what's possible with blockchain, AI, and 
+                      emerging technologies to solve real-world problems at scale.
+                    </p>
+                  </div>
+
+                  <div className="vision-block">
+                    <div className="block-number">03</div>
+                    <h4>Accessibility</h4>
+                    <p>
+                      Making advanced financial instruments and decentralized services 
+                      accessible to everyone, regardless of location or economic status.
+                    </p>
+                  </div>
+
+                  <div className="vision-block">
+                    <div className="block-number">04</div>
+                    <h4>Sustainability</h4>
+                    <p>
+                      Building protocols and systems designed for long-term sustainability, 
+                      both economically and environmentally, for future generations.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="future-focus">
-                  <h4>{t('about.vision.focus.title')}</h4>
+                  <h4>Current Focus Areas:</h4>
                   <div className="focus-grid">
                     <div className="focus-item">
                       <span className="focus-icon">🏦</span>
-                      <span>{t('about.vision.focus.rwa')}</span>
+                      <span>Real World Asset Tokenization</span>
                     </div>
                     <div className="focus-item">
                       <span className="focus-icon">🤖</span>
-                      <span>{t('about.vision.focus.ai')}</span>
+                      <span>AI-Powered Trading Systems</span>
                     </div>
                     <div className="focus-item">
                       <span className="focus-icon">🔗</span>
-                      <span>{t('about.vision.focus.crosschain')}</span>
+                      <span>Cross-Chain Interoperability</span>
                     </div>
                     <div className="focus-item">
                       <span className="focus-icon">🎮</span>
-                      <span>{t('about.vision.focus.gaming')}</span>
+                      <span>Web3 Gaming Infrastructure</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="call-to-action">
-                  <h4>{t('about.vision.cta.title')}</h4>
-                  <p>{t('about.vision.cta.description')}</p>
+                  <h4>Let's Build Together</h4>
+                  <p>
+                    Interested in collaboration, consultation, or discussing innovative 
+                    blockchain solutions? Let's connect and create something extraordinary.
+                  </p>
                   <div className="cta-buttons">
                     <a href="https://github.com/mashmalol" target="_blank" rel="noopener noreferrer" className="cta-btn primary">
                       <svg viewBox="0 0 16 16" fill="currentColor">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
                       </svg>
-                      {t('about.vision.cta.github')}
+                      View GitHub
                     </a>
                     <a href="https://mashprotocol4.wordpress.com/" target="_blank" rel="noopener noreferrer" className="cta-btn secondary">
-                      📄 {t('about.vision.cta.whitepaper')}
+                      📄 Read Whitepaper
                     </a>
                   </div>
                 </div>

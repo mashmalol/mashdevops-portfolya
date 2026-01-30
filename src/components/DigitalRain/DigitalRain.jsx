@@ -14,7 +14,7 @@ const DigitalRain = ({
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    const characters = '0x9b37614ed86e32330DF292220b9411d10e7F2FFb@#$%^&*()*&^%';
+    const characters = '0x9b37614ed86e32330DF292220b9411d10e7F2FFb@nanda_the_es';
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;

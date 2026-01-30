@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
-import { LanguageProvider } from './contexts/LanguageContext';
 import DigitalRain from './components/DigitalRain/DigitalRain';
-import LanguageToggle from './components/LanguageToggle/LanguageToggle';
 import About from './components/About/About';
 import { repositories } from './data/repositories';
 import './App.css';
 
 function App() {
-  return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
-  );
-}
-
-function AppContent() {
   const [filteredRepos] = useState(repositories);
 
   return (
     <div className="app">
       <DigitalRain />
-      <LanguageToggle />
       
       <header className="header">
         <div className="header-container">
