@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './DigitalRain.css';
 
 const DigitalRain = ({ 
-  fontSize = 16, 
+  fontSize = 20, 
   speed = 50, 
   density = 0.95 
 }) => {
@@ -14,7 +14,8 @@ const DigitalRain = ({
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    const characters = '0x9b37614ed86e32330DF292220b9411d10e7F2FFb@nanda_the_es';
+    // Brutalist retro characters
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?/~`';
     
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -29,9 +30,10 @@ const DigitalRain = ({
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Green text
+      // Green text with retro font
       ctx.fillStyle = '#0F0';
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = `${fontSize}px VT323, monospace`;
+      ctx.fontWeight = '400';
       
       columnsRef.current.forEach((y, index) => {
         const character = characters.charAt(
@@ -40,6 +42,13 @@ const DigitalRain = ({
         
         const x = index * fontSize;
         ctx.fillText(character, x, y * fontSize);
+        
+        // Occasionally add bright accent character
+        if (Math.random() > 0.98) {
+          ctx.fillStyle = '#FFF';
+          ctx.fillText(character, x, y * fontSize);
+          ctx.fillStyle = '#0F0';
+        }
         
         // Reset column with some randomness
         if (y * fontSize > canvas.height && Math.random() > density) {
